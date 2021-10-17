@@ -1,0 +1,24 @@
+{
+  "name": "nodejs-graphql-typeorm-typegraphql-2021-10-16",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Marcelo Ragnelli Frigerio <mrfrigerio@yahoo.com.br>",
+  "license": "MIT",
+  "scripts": {
+    "dev": "tsnd --inspect --transpile-only --ignore-watch node_modules ./src/index.ts"
+  },
+  "dependencies": {
+    "apollo-server-express": "^3.4.0",
+    "express": "^4.17.1",
+    "graphql": "^15.6.1",
+    "pg": "^8.7.1",
+    "reflect-metadata": "^0.1.13",
+    "type-graphql": "^1.1.1",
+    "typeorm": "^0.2.38"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.13",
+    "ts-node-dev": "^1.1.8",
+    "typescript": "^4.4.4"
+  }
+}
