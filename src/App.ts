@@ -9,10 +9,6 @@ export class App {
   private apolloServer: ApolloServer<ExpressContext>;
   private port: number = 4010;
 
-  constructor() {
-    this.init();
-  }
-
   private async init() {
     this.app = express();
     const schema = await buildSchema({
@@ -21,7 +17,6 @@ export class App {
 
     this.apolloServer = new ApolloServer({ schema });
     await this.apolloServer.start();
-    this.middlewares();
   }
 
   private middlewares() {
@@ -29,6 +24,8 @@ export class App {
   }
 
   async start() {
+    await this.init();
+    this.middlewares();
     this.app.listen(this.port, () =>
       console.log(`Apollo server started at port ${this.port}`)
     );
