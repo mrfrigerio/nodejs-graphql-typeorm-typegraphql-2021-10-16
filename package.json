@@ -5,7 +5,8 @@
   "author": "Marcelo Ragnelli Frigerio <mrfrigerio@yahoo.com.br>",
   "license": "MIT",
   "scripts": {
-    "dev": "tsnd --inspect --transpile-only --ignore-watch node_modules ./src/index.ts"
+    "dev": "tsnd --inspect --transpile-only --ignore-watch node_modules ./src/index.ts",
+    "typeorm": "tsnd ./node_modules/typeorm/cli"
   },
   "dependencies": {
     "apollo-server-express": "^3.4.0",

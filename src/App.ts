@@ -3,6 +3,7 @@ import { ApolloServer, ExpressContext } from "apollo-server-express";
 import express, { Express } from "express";
 import { buildSchema } from "type-graphql";
 import { UsersResolver } from "./modules/users/graphql/resolvers/UsersResolver";
+import { connect } from "./config/database";
 
 export class App {
   private app: Express;
@@ -10,6 +11,7 @@ export class App {
   private port: number = 4010;
 
   private async init() {
+    await connect();
     this.app = express();
     const schema = await buildSchema({
       resolvers: [UsersResolver],
