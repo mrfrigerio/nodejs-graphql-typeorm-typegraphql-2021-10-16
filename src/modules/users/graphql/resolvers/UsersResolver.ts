@@ -6,7 +6,6 @@ import {
   Resolver,
   Root,
 } from "type-graphql";
-import { getRepository } from "typeorm";
 import { Pet } from "../../../pets/database/entities/Pet";
 import { User } from "../../database/entities/User";
 import { UserInput } from "../inputs/UserInput";
@@ -15,14 +14,12 @@ import { UserInput } from "../inputs/UserInput";
 export class UsersResolver {
   @Query(() => [User])
   async getUsers() {
-    const usersRepository = getRepository(User);
-    return usersRepository.find();
+    return User.find();
   }
 
   @FieldResolver()
   async pets(@Root() user: User) {
-    const petsRepository = getRepository(Pet);
-    return petsRepository.find({ where: { userId: user.id } });
+    return Pet.find({ where: { userId: user.id } });
   }
 
   @Mutation(() => User)

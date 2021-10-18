@@ -7,8 +7,7 @@ import { PetInput } from "../inputs/PetInput";
 export class PetsResolver {
   @Query(() => [Pet])
   async getPets() {
-    const petsRepository = getRepository(Pet);
-    return petsRepository.find();
+    return Pet.find();
   }
 
   @Mutation(() => Pet)
