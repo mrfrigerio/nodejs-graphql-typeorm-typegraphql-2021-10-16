@@ -15,6 +15,9 @@ export class Pet extends BaseEntity {
   @Column()
   name: string;
 
+  @Column()
+  dtNasc: Date;
+
   @ManyToOne(() => User, { nullable: true })
   user: User;
 
