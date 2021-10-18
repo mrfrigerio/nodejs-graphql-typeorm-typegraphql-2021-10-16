@@ -6,24 +6,31 @@ import {
   PrimaryGeneratedColumn,
 } from "typeorm";
 import bcrypt from "bcryptjs";
+import { Field, ID, ObjectType } from "type-graphql";
 
 @Entity("users")
+@ObjectType()
 export class User extends BaseEntity {
   @PrimaryGeneratedColumn("uuid")
+  @Field(() => ID)
   id: string;
 
   @Column()
+  @Field()
   firstname: string;
 
   @Column()
+  @Field()
   lastname: string;
 
   @Column()
+  @Field()
   email: string;
 
   password: string;
 
   @Column()
+  @Field()
   password_hash: string;
 
   @BeforeInsert()
