@@ -2,9 +2,10 @@
 
 # API GraphQL com NodeJs, TypeORM e TypeGraphQL
 
-Criar formulários no React não é uma tarefa tão difícil assim, mas manter formulários complexos e performáticos em aplicações que podem escalar para o infinito e além é um trabalho árduo principalmente pela limitação que existe nas estratégias atuais.
-
-Nesse vídeo vamos utilizar o Unform, uma biblioteca criada pela Rocketseat para facilitar a manipulação de formulários complexos com relacionamentos mantendo a performance independente do número de campos.
+Nesta aula, iremos introduzir diversos conceitos fundamentais de GraphQL. Desta forma, não é necessário nenhum conhecimento prévio de GraphQL para acompanhar a aula, porém é importante ter familiaridade com os conceitos básicos de http e node.js com express.
+O cenário que iremos utilizar será o de um PetShop onde teremos o cadastro de usuários e seus respectivos Pets.
+Apesar de ser um cenário simples com apenas duas entidades, utilizaremos esse cenário como base para introduzir diversos conceitos importantes do GraphQL tais como: Scalar Types, Object Types, resolvers, queries, mutations, context, middlewares, dentre outros.
+Com os conceitos introduzidos nessa aula, o aluno será capaz de criar cenários e regras de negócio mais complexos conforme necessário em seus projetos.
 
 ## Expert
 
