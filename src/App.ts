@@ -5,7 +5,6 @@ import { buildSchema } from "type-graphql";
 import { UsersResolver } from "./modules/users/graphql/resolvers/UsersResolver";
 import { connect } from "./config/database";
 import { PetsResolver } from "./modules/pets/graphql/resolvers/PetsResolver";
-import { User } from "./modules/users/database/entities/User";
 
 export class App {
   private app: Express;
@@ -33,13 +32,5 @@ export class App {
     this.app.listen(this.port, () =>
       console.log(`Apollo server started at port ${this.port}`)
     );
-
-    const newUser = Object.assign(new User(), {
-      firstname: "Marcelo",
-      lastname: "Ragnelli",
-      email: "mrfrigerio@yahoo.com.br",
-      password: "123abc",
-    } as User);
-    await newUser.save();
   }
 }
