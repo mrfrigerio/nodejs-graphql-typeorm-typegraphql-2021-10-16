@@ -1,10 +1,20 @@
-import { Query, Resolver } from "type-graphql";
+import { Arg, Mutation, Query, Resolver } from "type-graphql";
+import { getRepository } from "typeorm";
+import { Pet } from "../../../pets/database/entities/Pet";
+import { PetInput } from "../inputs/PetInput";
 
-@Resolver()
+@Resolver(Pet)
 export class PetsResolver {
-  private users = ["user1", "user2", "user3"];
-  @Query((returns) => [String], { name: "listUsers" })
-  getPets() {
-    return this.users;
+  @Query(() => [Pet])
+  async getPets() {
+    const petsRepository = getRepository(Pet);
+    return petsRepository.find();
+  }
+
+  @Mutation(() => Pet)
+  async createPet(@Arg("petInput") petInput: PetInput) {
+    const newPet = Object.assign(new Pet(), { ...petInput });
+    await newPet.save();
+    return newPet;
   }
 }
